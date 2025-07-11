@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive River Crossing Simulation</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 2rem;
+        }
+        #simulation-container {
+            flex: 2;
+            margin-right: 2rem;
+        }
+        canvas {
+            background-color: #87ceeb; /* Sky blue for the river */
+            border: 2px solid #000;
+        }
+        #controls-container {
+            flex: 1;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        #results {
+            margin-top: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive River Crossing Simulation</h1>
+    <div class="container">
+        <div id="simulation-container">
+            <canvas id="riverCanvas"></canvas>
+        </div>
+        <div id="controls-container">
+            <h2>Controls</h2>
+            <div class="control-group">
+                <label for="riverWidth">River Width: <span id="riverWidthValue">10</span> m</label>
+                <input type="range" id="riverWidth" min="5" max="50" value="10">
+            </div>
+            <div class="control-group">
+                <label for="swimmerSpeed">Swimmer Speed: <span id="swimmerSpeedValue">2</span> m/s</label>
+                <input type="range" id="swimmerSpeed" min="1" max="10" value="2">
+            </div>
+            <div class="control-group">
+                <label for="waterSpeed">Water Speed: <span id="waterSpeedValue">1</span> m/s</label>
+                <input type="range" id="waterSpeed" min="0" max="10" value="1">
+            </div>
+            <button id="start-button">Start/Reset Animation</button>
+            <div id="results">
+                <h3>Calculated Results:</h3>
+                <p>Time to cross: <span id="time">-</span> s</p>
+                <p>Drift distance: <span id="drift">-</span> m</p>
+                <p>Resultant velocity: <span id="resultantVelocity">-</span> m/s</p>
+                <p>Total distance: <span id="totalDistance">-</span> m</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/simulation.js"></script>
+</body>
+</html>
