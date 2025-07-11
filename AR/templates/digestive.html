@@ -119,6 +119,7 @@
                   let rotation = robot.getAttribute('rotation');
                   rotation.y += dx * 0.5; // Yaw (left/right)
                   rotation.x += dy * 0.5; // Pitch (up/down)
+                  rotation.z += dx * 0.1; // Roll (twist) based on horizontal movement
                   robot.setAttribute('rotation', rotation);
                 } else {
                   // --- MOVE MODE ---
@@ -162,8 +163,8 @@
       <a-marker preset="hiro">
         <a-entity
           gltf-model="#ar-model"
-          scale="0.1 0.1 0.1"
-          position="0 0 0"
+          scale="1 1 1"
+          position="0 0.5 0"
           rotation="-90 0 0"
           manipulator
         >
