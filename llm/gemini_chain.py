@@ -9,7 +9,7 @@ if not api_key:
     raise ValueError("GOOGLE_API_KEY environment variable is not set")
 
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-pro')  # Changed to gemini-pro as gemini-2.0-flash is not a valid model name
+model = genai.GenerativeModel('gemini-2.0-flash')  # Changed to gemini-pro as gemini-2.0-flash is not a valid model name
 
 def gemini_model(prompt_vars: Dict[str, Any]) -> str:
     """
