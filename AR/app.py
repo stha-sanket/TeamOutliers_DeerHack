@@ -7,7 +7,11 @@ app = Flask(__name__)
 FIGURES_DIR = os.path.join(os.path.dirname(__file__), 'figures-3D')
 
 @app.route('/')
-def index():
+def landing_page():
+    return render_template('index.html')
+
+@app.route('/digestive')
+def digestive_ar():
     return render_template('digestive.html')
 
 @app.route('/figures-3D/<path:filename>')
