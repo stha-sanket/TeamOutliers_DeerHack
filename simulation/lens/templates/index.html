@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Lens Simulation</h1>
+    <canvas id="lensCanvas" width="800" height="400"></canvas>
+    <div class="controls">
+        <label for="lens_type">Lens Type:</label>
+        <select id="lens_type">
+            <option value="convex">Convex</option>
+            <option value="concave">Concave</option>
+        </select>
+        <label for="object_distance">Object Distance:</label>
+        <input type="range" id="object_distance" min="1" max="400" value="150">
+        <label for="focal_length">Focal Length:</label>
+        <input type="range" id="focal_length" min="1" max="200" value="100">
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+.controls {
+    margin-top: 20px;
+}
