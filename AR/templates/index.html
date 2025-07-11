@@ -44,8 +44,22 @@
 <body>
     <div class="container">
         <h1>Welcome to the AR Experience</h1>
-        <p>Explore the human digestive system in Augmented Reality.</p>
-        <a href="/digestive" class="button">Launch AR Experience</a>
+        <p>Select a 3D model to view in Augmented Reality:</p>
+        <div class="model-buttons">
+            <a href="/ar/digestive_system__human_anatomy.glb" class="button">Digestive System</a>
+            <a href="/ar/human_heart_-_interior.glb" class="button">Human Heart</a>
+            <a href="/ar/mouth.glb" class="button">Mouth</a>
+            <a href="/ar/dharahara.glb" class="button">Dharahara</a>
+        </div>
+    </div>
+    <style>
+        .model-buttons {
+            margin-top: 20px;
+        }
+        .model-buttons .button {
+            margin: 10px;
+        }
+    </style>
     </div>
 </body>
 </html>

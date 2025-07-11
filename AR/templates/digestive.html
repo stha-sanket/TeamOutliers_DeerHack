@@ -153,7 +153,7 @@
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
 
       <a-assets>
-        <a-asset-item id="digestive-model" src="figures-3D/digestive_system__human_anatomy.glb"></a-asset-item>
+        <a-asset-item id="ar-model" src="/figures-3D/{{ model_name }}"></a-asset-item>
       </a-assets>
 
       <a-entity light="type: ambient; color: #BBB"></a-entity>
@@ -161,7 +161,7 @@
 
       <a-marker preset="hiro">
         <a-entity
-          gltf-model="#digestive-model"
+          gltf-model="#ar-model"
           scale="0.1 0.1 0.1"
           position="0 0 0"
           rotation="-90 0 0"

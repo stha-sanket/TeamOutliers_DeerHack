@@ -10,9 +10,9 @@ FIGURES_DIR = os.path.join(os.path.dirname(__file__), 'figures-3D')
 def landing_page():
     return render_template('index.html')
 
-@app.route('/digestive')
-def digestive_ar():
-    return render_template('digestive.html')
+@app.route('/ar/<model_name>')
+def ar_experience(model_name):
+    return render_template('digestive.html', model_name=model_name)
 
 @app.route('/figures-3D/<path:filename>')
 def serve_figures(filename):
