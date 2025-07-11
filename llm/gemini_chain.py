@@ -1,21 +1,44 @@
-from langchain_core.prompts import PromptTemplate
-from llm.gemini_client import generate_content
+import google.generativeai as genai
+import os
+from typing import Dict, Any
+from langchain_core.runnables import RunnablePassthrough
 
-lesson_prompt = PromptTemplate.from_template("""
-You are a tutor for a Class {class_level} student named {name}, age {age}.
+# Configure Gemini
+api_key = os.getenv('GOOGLE_API_KEY')
+if not api_key:
+    raise ValueError("GOOGLE_API_KEY environment variable is not set")
 
-Subject: {subject}
-Topic: {topic}
-Concepts: {concepts}
+genai.configure(api_key=api_key)
+model = genai.GenerativeModel('gemini-pro')  # Changed to gemini-pro as gemini-2.0-flash is not a valid model name
 
-Use this context to teach clearly:
+def gemini_model(prompt_vars: Dict[str, Any]) -> str:
+    """
+    Process the prompt variables and generate content using Gemini
+    """
+    try:
+        # Create a formatted prompt from the variables
+        prompt = f"""
+        You are a tutor for a Class {prompt_vars['class_level']} student named {prompt_vars['name']}, age {prompt_vars['age']}.
 
-{context}
+        Subject: {prompt_vars['subject']}
+        Topic: {prompt_vars['topic']}
+        Concepts: {prompt_vars['concepts']}
 
-Limit: ~300 words.
-""")
+        Use this context to teach clearly:
 
-def gemini_model(prompt_dict):
-    return generate_content(prompt_dict["prompt"], temperature=0.7)
+        {prompt_vars['context']}
 
-lesson_chain = lesson_prompt | (lambda vars: {"prompt": lesson_prompt.format(**vars)}) | gemini_model
+        Limit: ~300 words.
+        """
+
+        # Generate content using Gemini
+        response = model.generate_content(prompt)
+        
+        # Return the text response
+        return response.text.strip()
+        
+    except Exception as e:
+        return f"Error generating content: {str(e)}"
+
+# Create a chain that can be used in the LangGraph
+lesson_chain = RunnablePassthrough() | gemini_model

@@ -1,0 +1,11 @@
+The chain rule is a formula for computing the derivative of a composite function. 
+For functions f(x) and g(x), the derivative of their composite (f ∘ g)(x) is:
+(f ∘ g)'(x) = f'(g(x)) · g'(x)
+
+Example:
+Let f(x) = x² and g(x) = 3x + 1
+Then (f ∘ g)(x) = (3x + 1)²
+Using chain rule:
+f'(x) = 2x
+g'(x) = 3
+(f ∘ g)'(x) = 2(3x + 1) · 3 = 6(3x + 1)

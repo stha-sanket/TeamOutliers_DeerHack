@@ -1,0 +1,7 @@
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
+google-generativeai
+langgraph
+

@@ -7,8 +7,10 @@ def end_node(state: LearningState) -> LearningState:
         state.topics_mastered.append(state.topic)
 
     state.user_behavior_log.append({
-        "message": f"Completed lesson on '{state.topic}'",
-        "step": "end_node",
-        "timestamp": datetime.utcnow().isoformat()
+        "action": "session_completion",
+        "status": "success",
+        "topic": state.topic,
+        "total_sessions": state.sessions_completed,
+        "mastered_topics": len(state.topics_mastered)
     })
     return state

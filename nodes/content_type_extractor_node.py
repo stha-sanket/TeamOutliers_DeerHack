@@ -12,6 +12,7 @@ def content_type_extractor_node(state: LearningState) -> LearningState:
         "context": f"Extract 3 core concepts from topic: {state.topic}"
     }
 
-    concepts_text = lesson_chain.invoke(prompt_vars)
+    # Invoke chain with the variables directly
+    concepts_text = str(lesson_chain.invoke(prompt_vars))
     state.extracted_concepts = [c.strip() for c in concepts_text.split(",") if c.strip()]
     return state

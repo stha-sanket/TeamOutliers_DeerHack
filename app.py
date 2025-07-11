@@ -1,7 +1,17 @@
+import os
 from state import LearningState
 from graph import compiled
 
+def init():
+    """Initialize environment and verify requirements"""
+    # Check for required environment variables
+    if not os.getenv('GOOGLE_API_KEY'):
+        raise ValueError("GOOGLE_API_KEY environment variable is not set")
+
 def main():
+    # Initialize environment and verify setup
+    init()
+
     # Initialize input state (example)
     state = LearningState(
         name="Dyane Master",
