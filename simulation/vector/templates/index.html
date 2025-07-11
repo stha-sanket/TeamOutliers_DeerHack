@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot Product Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input, .slider {
+            margin: 10px;
+            padding: 5px;
+            width: 150px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .slider-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Dot Product Calculator & Visualizer</h1>
+
+<div class="slider-container">
+    <div>
+        <label for="a_x">Vector A (x): </label>
+        <input type="range" class="slider" id="a_x" name="a_x" min="-10" max="10" step="0.1" value="0" oninput="updateValues()">
+        <span id="a_x_val">0</span>
+    </div>
+    <div>
+        <label for="a_y">Vector A (y): </label>
+        <input type="range" class="slider" id="a_y" name="a_y" min="-10" max="10" step="0.1" value="0" oninput="updateValues()">
+        <span id="a_y_val">0</span>
+    </div>
+</div>
+
+<div class="slider-container">
+    <div>
+        <label for="b_x">Vector B (x): </label>
+        <input type="range" class="slider" id="b_x" name="b_x" min="-10" max="10" step="0.1" value="0" oninput="updateValues()">
+        <span id="b_x_val">0</span>
+    </div>
+    <div>
+        <label for="b_y">Vector B (y): </label>
+        <input type="range" class="slider" id="b_y" name="b_y" min="-10" max="10" step="0.1" value="0" oninput="updateValues()">
+        <span id="b_y_val">0</span>
+    </div>
+</div>
+
+<!-- Results Section -->
+<h3>Results:</h3>
+<p>Dot Product: <span id="dot_prod">0</span></p>
+<p>Angle between Vectors (degrees): <span id="angle">0</span></p>
+<h4>Visual Representation:</h4>
+<img id="vector_plot" src="" alt="Dot Product Visualization">
+
+<script>
+    // Function to update vector values and send AJAX request to Flask backend
+    function updateValues() {
+        const a_x = parseFloat(document.getElementById('a_x').value);
+        const a_y = parseFloat(document.getElementById('a_y').value);
+        const b_x = parseFloat(document.getElementById('b_x').value);
+        const b_y = parseFloat(document.getElementById('b_y').value);
+
+        // Update the displayed slider values
+        document.getElementById('a_x_val').innerText = a_x;
+        document.getElementById('a_y_val').innerText = a_y;
+        document.getElementById('b_x_val').innerText = b_x;
+        document.getElementById('b_y_val').innerText = b_y;
+
+        // Make AJAX request to Flask
+        fetch('/update_vectors', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ a_x, a_y, b_x, b_y })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update results in the UI
+            document.getElementById('dot_prod').innerText = data.dot_prod;
+            document.getElementById('angle').innerText = data.angle;
+
+            // Update the image
+            document.getElementById('vector_plot').src = 'data:image/png;base64,' + data.image;
+        });
+    }
+
+    // Initialize with default values
+    updateValues();
+</script>
+
+</body>
+</html>
