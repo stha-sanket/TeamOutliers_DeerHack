@@ -30,7 +30,7 @@ class RequestHandler:
         return form_value
 
     @staticmethod
-    def handle_exception(call: callable, pass_value=False, ignore_value=False, accept_types=False):
+    def handle_exception(call: callable, pass_value=True, ignore_value=False, accept_types=False):
         try:
             callable_return = call()
             if pass_value:

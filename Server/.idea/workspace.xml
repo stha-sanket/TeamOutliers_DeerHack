@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b02e86-7df7-42c1-9785-4c265f736126" name="Changes" comment="" />
+    <list default="true" id="90b02e86-7df7-42c1-9785-4c265f736126" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bundles/template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/board.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bundles/common/prototypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/bundles/common/prototypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/chatbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/chatbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/bundles/components/common/ChatBot.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/bundles/components/common/ChatBot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vercel.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,10 +31,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5
 }]]></component>
   <component name="ProjectId" id="2zjSu7aMHkPcNXGE6dUj1rR4PDU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,11 +49,13 @@
   "keyToString": {
     "Python.app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/rohan/Projects/Research/deerhack/Server/bundles/common"
+    "git-widget-placeholder": "rohan",
+    "last_opened_file_path": "/home/rohan/Projects/Research/deerhack/Server/controller"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/controller" />
       <recent name="$PROJECT_DIR$/bundles/common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

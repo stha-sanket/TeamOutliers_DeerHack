@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, request, abort, jsonify
 
+from routes.board import board
 from routes.chatbot import chatbot
 
 app = Flask(__name__)
@@ -9,6 +10,7 @@ app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
 IGNORE_CHECK = ["/favicon.ico"]
 
 app.register_blueprint(chatbot)
+app.register_blueprint(board)
 
 
 @app.after_request
@@ -59,5 +61,4 @@ def handle_server_error_request(e):
 
 
 if __name__ == "__main__":
-    app.run() if os.getenv("VERCEL") else \
-        app.run(host='0.0.0.0', port=2000, debug=True)  # for development
+    app.run(host='0.0.0.0', port=2000, debug=True)  # for development
