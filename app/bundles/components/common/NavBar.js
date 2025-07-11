@@ -18,6 +18,108 @@ export default function NavBar({ }) {
                     <div class="hidden flex-grow h-full md:flex justify-end items-center space-x-6">
                         <div class="group relative h-full flex">
                             <h3 class="capitalize select-none cursor-pointer flex gap-1 items-center transition-all duration-300">
+                                <span class="capitalize para">Simulation</span>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="group-hover:rotate-180 transition-transform" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </h3>
+                            <div class="l">
+                                <div class="hidden group-hover:flex flex-col absolute top-3/4 -left-4 bg-[var(--background-sec)] shadow-lg rounded-md w-[250px] border border-[#8686864d] z-10">
+                                    <a class="flex p-2 border-b items-center justify-between" href="/category/img">
+                                        <h3 class="para col-pri capitalize ml-1">
+                                            <span class="col-sec font-semibold">Simulation</span></h3>
+                                        <span class="button-sec block px-1 py-[2px]">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 3V5H3V3H12ZM16 19V21H3V19H16ZM22 11V13H3V11H22Z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <div class="flex flex-col">
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/lens">
+                                            Lens
+                                        </a>
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/projectile">
+                                            Projectile
+                                        </a>
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/swimming">
+                                            Swimming
+                                        </a>
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/vector">
+                                            Vector
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group relative h-full flex">
+                            <h3 class="capitalize select-none cursor-pointer flex gap-1 items-center transition-all duration-300">
+                                <span class="capitalize para">3D Models</span>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="group-hover:rotate-180 transition-transform" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </h3>
+                            <div class="l">
+                                <div class="hidden group-hover:flex flex-col absolute top-3/4 -left-4 bg-[var(--background-sec)] shadow-lg rounded-md w-[250px] border border-[#8686864d] z-10">
+                                    <a class="flex p-2 border-b items-center justify-between" href="/category/img">
+                                        <h3 class="para col-pri capitalize ml-1">
+                                            <span class="col-sec font-semibold">3D Models</span></h3>
+                                        <span class="button-sec block px-1 py-[2px]">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 3V5H3V3H12ZM16 19V21H3V19H16ZM22 11V13H3V11H22Z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <div class="flex flex-col">
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/biology/view-3D/heart.glb">
+                                            Heart
+                                        </a>
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/biology/view-3D/digestive-system.glb">
+                                            Digestive System
+                                        </a>
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/biology/view-3D/dharara.glb">
+                                            Dharara
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group relative h-full flex">
+                            <h3 class="capitalize select-none cursor-pointer flex gap-1 items-center transition-all duration-300">
+                                <span class="capitalize para">Biology</span>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="group-hover:rotate-180 transition-transform" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </h3>
+                            <div class="l">
+                                <div class="hidden group-hover:flex flex-col absolute top-3/4 -left-4 bg-[var(--background-sec)] shadow-lg rounded-md w-[250px] border border-[#8686864d] z-10">
+                                    <a class="flex p-2 border-b items-center justify-between" href="/category/img">
+                                        <h3 class="para col-pri capitalize ml-1">
+                                            <span class="col-sec font-semibold">Biology</span></h3>
+                                        <span class="button-sec block px-1 py-[2px]">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 3V5H3V3H12ZM16 19V21H3V19H16ZM22 11V13H3V11H22Z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <div class="flex flex-col">
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/biology/view-3D/heart.glb">
+                                            Heart
+                                        </a>
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/biology/view-3D/digestive-system.glb">
+                                            Digestive System
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group relative h-full flex">
+                            <h3 class="capitalize select-none cursor-pointer flex gap-1 items-center transition-all duration-300">
                                 <span class="capitalize para">Physics</span>
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="group-hover:rotate-180 transition-transform" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
@@ -37,16 +139,16 @@ export default function NavBar({ }) {
                                         </span>
                                     </a>
                                     <div class="flex flex-col">
-                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/lens">
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/lens">
                                             Lens
                                         </a>
-                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/projectile">
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/projectile">
                                             Projectile
                                         </a>
-                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/swimming">
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/swimming">
                                             Swimming
                                         </a>
-                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/vector">
+                                        <a class="fc gap-2 p-2 border-b border-b-[#8686864d] hover:bg-[var(--hover-pri)] para" href="/board/physic/simulation/vector">
                                             Vector
                                         </a>
                                     </div>

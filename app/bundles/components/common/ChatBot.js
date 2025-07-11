@@ -10,6 +10,7 @@ import { IoMdClose } from "react-icons/io";
 import useAppAPIServer from "../../Hooks/useAppAPI";
 import { marked } from "marked";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaQuestion } from "react-icons/fa6";
 
 export default function ChatBot({ }) {
     const [chatOpen, setChatOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function ChatBot({ }) {
     const [userInput, setUserInput] = useState("");
     const [waitingResponse, setWaitingResponse] = useState(false);
     const server = useAppAPIServer();
-    const [messages, setMessages] = useState([{ content: "Hi, how may I help you?", role: "ai" }]);
+    const [messages, setMessages] = useState([]);
 
     async function handelResponse() {
         if (waitingResponse) return;
@@ -57,7 +58,7 @@ export default function ChatBot({ }) {
                             transition={{ type: "spring", stiffness: 200, damping: 20 }}
                             className="box w-[400px] h-[500px] shadow rounded-md fcb flex-col bg-white"
                         >
-                            <div className="__action px-1 py-3 w-full fcb gap-1 border-b border-b-[#00000023]">
+                            <div className="__action px-1 py-3 pl-3 w-full fcb gap-1 border-b border-b-[#00000023]">
                                 <div className="fcb gap-3">
                                     <MdOutlineKeyboardBackspace size={25} />
                                     <p>Outliers Chat Service</p>
@@ -81,6 +82,12 @@ export default function ChatBot({ }) {
                                             />
                                         );
                                     })}
+                                    {!messages?.length && <div className="h-full w-full fcc flex-col">
+                                        <FaQuestion size={50} className="mb-3" />
+                                        <h3 className="sec-head">Hi, How <span className="col-pri">can I help you </span>with?</h3>
+                                        <p className="sec-para">Try, What is projectile motion?</p>
+                                        <p className="sec-para">What is vector store?</p>
+                                    </div>}
                                 </AnimatePresence>
 
                                 {waitingResponse && (
@@ -102,7 +109,7 @@ export default function ChatBot({ }) {
                                 <BsThreeDotsVertical size={25} />
                                 <input
                                     type="text"
-                                    className="border rounded-lg p-1 w-full outline-none transition duration-200 focus:ring-2 focus:ring-pri"
+                                    className="border rounded-lg p-2 w-full outline-none transition duration-200"
                                     value={userInput}
                                     onChange={e => setUserInput(e.target.value)}
                                 />

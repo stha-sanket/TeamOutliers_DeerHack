@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, request, abort, jsonify
+from flask import Flask, request, abort, jsonify, send_from_directory
 
 from routes.board import board
 from routes.chatbot import chatbot
@@ -8,9 +8,15 @@ from routes.chatbot import chatbot
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
 IGNORE_CHECK = ["/favicon.ico"]
+MODEL_3D_LOCAL_PATH = os.path.join(os.path.dirname(__file__), "source/public/models")
 
 app.register_blueprint(chatbot)
 app.register_blueprint(board)
+
+
+@app.route("/v1/source/public/model/<path>")
+def serverModel(path):
+    return send_from_directory(MODEL_3D_LOCAL_PATH, path)
 
 
 @app.after_request
@@ -23,8 +29,7 @@ def add_headers(response):
 
 @app.before_request
 def handel_before_request():
-    if (not (request.path in IGNORE_CHECK) and not request.args.get("key")
-            and not request.args.get("key") == "__drk__here_anything__"):
+    if not (request.path in IGNORE_CHECK) and not request.args.get("key"):
         abort(403)
 
 
