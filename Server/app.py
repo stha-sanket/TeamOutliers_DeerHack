@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, request, abort, jsonify, send_from_directory
+from flask import Flask, request, abort, jsonify, send_from_directory, render_template
 
 from routes.board import board
 from routes.chatbot import chatbot
@@ -17,6 +17,11 @@ app.register_blueprint(board)
 @app.route("/v1/source/public/model/<path>")
 def serverModel(path):
     return send_from_directory(MODEL_3D_LOCAL_PATH, path)
+
+
+@app.route("/v1/source/model/<path>")
+def modelSource(path):
+    return render_template("model_Render.html", model_name=path)
 
 
 @app.after_request

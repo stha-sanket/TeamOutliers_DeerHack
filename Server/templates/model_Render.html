@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marker-Based AR for Digestive System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+    <style>
+        #mode-button {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          padding: 12px;
+          border-radius: 8px;
+          background: rgba(0, 0, 0, 0.7);
+          color: white;
+          font: 16px sans-serif;
+          text-align: center;
+          cursor: pointer;
+          z-index: 10;
+        }
+        #scale-buttons {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          z-index: 10;
+          display: none;
+          flex-direction: column;
+        }
+
+        #scale-buttons button {
+          padding: 12px;
+          border-radius: 8px;
+          background: rgba(0, 0, 0, 0.7);
+          color: white;
+          font: 20px sans-serif;
+          text-align: center;
+          cursor: pointer;
+          margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        AFRAME.registerComponent('manipulator', {
+          init: function () {
+            this.isDragging = false;
+            this.previousTouch = null;
+            this.rotateMode = false; // Start in Move Mode
+
+            this.el.sceneEl.addEventListener('markerFound', () => {
+              const canvas = this.el.sceneEl.canvas;
+              const modeButton = document.getElementById('mode-button');
+              const scaleUpButton = document.getElementById('scale-up-button');
+              const scaleDownButton = document.getElementById('scale-down-button');
+              const model = this.el;
+
+              // Show buttons
+              modeButton.style.display = 'block';
+              document.getElementById('scale-buttons').style.display = 'flex';
+
+
+              // Toggle between Move and Rotate mode
+              modeButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.rotateMode = !this.rotateMode;
+                modeButton.textContent = this.rotateMode ? 'Switch to Move Mode' : 'Switch to Rotate Mode';
+              });
+
+              // Scale buttons
+              scaleUpButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let scale = model.getAttribute('scale');
+                scale.x += 0.5;
+                scale.y += 0.5;
+                scale.z += 0.5;
+                model.setAttribute('scale', scale);
+              });
+
+              scaleDownButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let scale = model.getAttribute('scale');
+                if (scale.x > 0.5) {
+                    scale.x -= 0.5;
+                    scale.y -= 0.5;
+                    scale.z -= 0.5;
+                    model.setAttribute('scale', scale);
+                }
+              });
+
+
+              // Touch Start
+              canvas.addEventListener('touchstart', (e) => {
+                this.isDragging = true;
+                this.previousTouch = this.copyTouches(e.touches);
+              });
+
+              // Touch End
+              canvas.addEventListener('touchend', () => {
+                this.isDragging = false;
+                this.previousTouch = null;
+              });
+
+              // Touch Move
+              canvas.addEventListener('touchmove', (e) => {
+                if (!this.isDragging) return;
+
+                const touches = e.touches;
+                const robot = this.el;
+
+                // One-finger drag: Move or Rotate based on mode
+                if (touches.length === 1 && this.previousTouch.length === 1) {
+                  const dx = touches[0].clientX - this.previousTouch[0].clientX;
+                  const dy = touches[0].clientY - this.previousTouch[0].clientY;
+
+                  if (this.rotateMode) {
+                    // --- ROTATE MODE ---
+                    let rotation = robot.getAttribute('rotation');
+                    rotation.y += dx * 0.5; // Yaw (left/right)
+                    rotation.x += dy * 0.5; // Pitch (up/down)
+                    rotation.z += dx * 0.1; // Roll (twist) based on horizontal movement
+                    robot.setAttribute('rotation', rotation);
+                  } else {
+                    // --- MOVE MODE ---
+                    let position = robot.getAttribute('position');
+                    position.x += dx * 0.005;
+                    position.z += dy * 0.005;
+                    robot.setAttribute('position', position);
+                  }
+                }
+                this.previousTouch = this.copyTouches(touches);
+              });
+            });
+
+            this.el.sceneEl.addEventListener('markerLost', () => {
+              document.getElementById('mode-button').style.display = 'none';
+              document.getElementById('scale-buttons').style.display = 'none';
+            });
+          },
+
+          copyTouches: function (touches) {
+            let touchArray = [];
+            for (let i = 0; i < touches.length; i++) {
+              touchArray.push({ clientX: touches[i].clientX, clientY: touches[i].clientY });
+            }
+            return touchArray;
+          }
+        });
+    </script>
+
+</head>
+<body style="margin: 0; overflow: hidden;">
+<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+
+    <a-assets>
+        <a-asset-item id="ar-model" src="/v1/source/model/{{ model_name }}"></a-asset-item>
+    </a-assets>
+
+    <a-entity light="type: ambient; color: #BBB"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+
+    <a-marker preset="hiro">
+        <a-entity
+                gltf-model="#ar-model"
+                scale="1 1 1"
+                position="0 0.5 0"
+                rotation="-90 0 0"
+                manipulator
+        >
+        </a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+
+</a-scene>
+
+<!-- This button will toggle between Move and Rotate modes -->
+<div id="mode-button" style="display: none;">Switch to Rotate Mode</div>
+<div id="scale-buttons">
+    <button id="scale-up-button">+</button>
+    <button id="scale-down-button">-</button>
+</div>
+
+</body>
+</html>

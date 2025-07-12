@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90b02e86-7df7-42c1-9785-4c265f736126" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/model_Render.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/board/physic/lens/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/board/physic/projectile/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/board/physic/swimming/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/board/physic/vector/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/bundles/components/common/ChatBot.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/bundles/components/common/ChatBot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/bundles/components/common/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/bundles/components/common/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/board/[subject]/view-3D/[modelID]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/board/[subject]/view-3D/[modelID]/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/bundles/Hooks/useAppAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/bundles/Hooks/useAppAPI.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -39,14 +37,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;rohan&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rohan/Projects/Research/deerhack/Server/controller&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "rohan",
+    "last_opened_file_path": "/home/rohan/Projects/Research/deerhack/Server/controller"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/controller" />
