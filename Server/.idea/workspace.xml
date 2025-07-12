@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b02e86-7df7-42c1-9785-4c265f736126" name="Changes" comment="" />
+    <list default="true" id="90b02e86-7df7-42c1-9785-4c265f736126" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/source/public/models/.xdp-human_heart_.glb-6rVLXG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/public/models/digestive_system.glb" beforeDir="false" afterPath="$PROJECT_DIR$/source/public/models/digestive.glb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/public/models/heart.glb" beforeDir="false" afterPath="$PROJECT_DIR$/source/public/models/heart.glb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/model_Render.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/model_Render.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,11 +43,12 @@
     "Python.app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "rohan",
-    "last_opened_file_path": "/home/rohan/Projects/Research/deerhack/Server/controller"
+    "last_opened_file_path": "/home/rohan/Projects/Research/deerhack/Server/source/public/models"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/public/models" />
       <recent name="$PROJECT_DIR$/controller" />
       <recent name="$PROJECT_DIR$/bundles/common" />
     </key>

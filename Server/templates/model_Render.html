@@ -151,10 +151,11 @@
 
 </head>
 <body style="margin: 0; overflow: hidden;">
+<h1>/v1/source/model/{{ model_name }}?key=asdasd</h1>
 <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
 
     <a-assets>
-        <a-asset-item id="ar-model" src="/v1/source/model/{{ model_name }}"></a-asset-item>
+        <a-asset-item id="ar-model" src="/v1/source/public/model/{{ model_name }}?key=asdasd"></a-asset-item>
     </a-assets>
 
     <a-entity light="type: ambient; color: #BBB"></a-entity>
