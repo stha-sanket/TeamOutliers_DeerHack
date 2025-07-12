@@ -64,16 +64,17 @@ export default function ProjectileMotion() {
     return (
         <Container.W1000>
             <div className="p-6">
-                <h1 className="pri-head text-center mb-4">
-                    Projectile Motion <span className="col-pri">Simulate</span>.
-                </h1>
+                <div className="mb-7 mt-5 text-center">
+                    <h1 className="pri-head text-center">
+                        Projectile Motion <span className="col-pri">Simulate</span>.
+                    </h1>
+                    <p>An interactive demo that visualizes the curved path of a projectile. Adjust launch angle and speed to see real-time trajectory, range, and height changes.</p>
+                </div>
 
                 <div className="flex justify-center mb-8">
                     <canvas
                         ref={canvasRef}
-                        width={800}
-                        height={400}
-                        className="border rounded-md bg-alt"
+                        className="border w-full rounded-md bg-alt"
                     />
                 </div>
 
@@ -122,6 +123,43 @@ export default function ProjectileMotion() {
                             <span className="text-blue-600">{timeOfFlight.toFixed(2)} s</span>
                         </p>
                     </div>
+                </div>
+
+                <div class="mt-16 bg-card p-8 rounded-lg border shadow-sm prose prose-lg max-w-none" style={{ opacity: 1, transform: "none" }}>
+                    <h2 class="text-3xl font-bold mb-6">Understanding Projectile Motion</h2>
+                    <p>Projectile motion is a form of motion experienced by an object or particle (a projectile) that is thrown near the Earth's surface and moves along a curved path under the action of gravity only.</p>
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Key Formulas</h3>
+                    <h4>Time of Flight (T):</h4>
+                    <p>The total time the projectile remains in the air:</p>
+                    <p>
+                        <code>T = (2 * v₀ * sin(θ)) / g</code>
+                    </p>
+                    <h4>Maximum Height (H):</h4>
+                    <p>The highest vertical position reached by the projectile:</p>
+                    <p>
+                        <code>H = (v₀² * sin²(θ)) / (2 * g)</code>
+                    </p>
+                    <h4>Range (R):</h4>
+                    <p>The total horizontal distance covered by the projectile:</p>
+                    <p>
+                        <code>R = (v₀² * sin(2θ)) / g</code>
+                    </p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>
+                            <code>v₀</code>: Initial velocity of the projectile</li>
+                        <li>
+                            <code>θ</code>: Launch angle with respect to the horizontal</li>
+                        <li>
+                            <code>g</code>: Acceleration due to gravity (approximately 9.8 m/s²)</li>
+                    </ul>
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Important Considerations</h3>
+                    <ul>
+                        <li>This simulation assumes no air resistance.</li>
+                        <li>The acceleration due to gravity (g) is constant and acts downwards.</li>
+                        <li>The horizontal motion is at a constant velocity.</li>
+                        <li>The vertical motion is under constant acceleration (g).</li>
+                    </ul>
                 </div>
             </div>
         </Container.W1000>

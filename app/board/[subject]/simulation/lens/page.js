@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Container from "@/app/bundles/components/common/container";
 import useAppAPIServer from "@/app/bundles/Hooks/useAppAPI";
+import Quiz from "@/app/bundles/components/Quiz/Quiz";
 
 export default function page() {
     const server = useAppAPIServer();
@@ -86,10 +87,13 @@ export default function page() {
 
     return (
         <Container.W1000>
-            <div className="p-6">
-                <h1 className="pri-head text-center mb-4">
-                    Lens <span className="col-pri">Simulation</span>.
-                </h1>
+            <div className="mb-10">
+                <div className="fcc mb-7 flex-col text-center mt-5">
+                    <h1 className="pri-head text-center">
+                        Lens <span className="col-pri">Simulation</span>.
+                    </h1>
+                    <p>An interactive demo showing how convex and concave lenses form images. Adjust object distance and focal length to see real-time ray and image changes.</p>
+                </div>
 
                 <div className="flex justify-center mb-8">
                     <canvas
@@ -141,7 +145,48 @@ export default function page() {
                         />
                     </div>
                 </div>
+
+                <div class="mt-16 bg-card p-8 rounded-lg border shadow-sm prose prose-lg max-w-none" style={{opacity: 1, transform: "none"}}>
+                    <h2 class="text-3xl font-bold mb-6">Understanding Lenses</h2>
+                    <p>Lenses are optical devices that refract light to form images. They are fundamental to many optical instruments, from eyeglasses to telescopes.</p>
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Key Concepts &amp; Formulas</h3>
+                    <h4>Lens Formula:</h4>
+                    <p>The relationship between object distance (u), image distance (v), and focal length (f) is given by the lens formula:</p>
+                    <p>
+                        <code>1/f = 1/v - 1/u</code>
+                    </p>
+                    <ul>
+                        <li>
+                            <code>f</code>: Focal length of the lens. Positive for convex, negative for concave.</li>
+                        <li>
+                            <code>u</code>: Object distance from the optical center. Always negative as per convention (object is real and placed on the left).</li>
+                        <li>
+                            <code>v</code>: Image distance from the optical center. Positive for real images (formed on the right), negative for virtual images (formed on the left).</li>
+                    </ul>
+                    <h4>Magnification:</h4>
+                    <p>Magnification (M) describes how much larger or smaller an image is compared to the object, and whether it is inverted or upright:</p>
+                    <p>
+                        <code>M = h'/h = v/u</code>
+                    </p>
+                    <ul>
+                        <li>
+                            <code>h'</code>: Height of the image.</li>
+                        <li>
+                            <code>h</code>: Height of the object.</li>
+                        <li>If <code>M</code> is positive, the image is upright. If negative, it's inverted.</li>
+                        <li>If <code>|M| &gt; 1</code>, the image is magnified. If <code>|M| &lt; 1</code>, it's diminished.</li>
+                    </ul>
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Types of Lenses</h3>
+                    <ul>
+                        <li>
+                            <strong>Convex Lens (Converging Lens):</strong> Thicker in the middle, converges parallel rays of light. Can form both real and virtual images depending on object position.</li>
+                        <li>
+                            <strong>Concave Lens (Diverging Lens):</strong> Thinner in the middle, diverges parallel rays of light. Always forms virtual, upright, and diminished images.</li>
+                    </ul>
+                </div>
             </div>
+
+            <Quiz/>
         </Container.W1000>
     );
 }

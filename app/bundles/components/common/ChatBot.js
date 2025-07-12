@@ -61,7 +61,7 @@ export default function ChatBot({ }) {
                             <div className="__action px-1 py-3 pl-3 w-full fcb gap-1 border-b border-b-[#00000023]">
                                 <div className="fcb gap-3">
                                     <MdOutlineKeyboardBackspace size={25} />
-                                    <p>Outliers Chat Service</p>
+                                    <p>ConceptC Chat Service</p>
                                 </div>
                                 <BsThreeDotsVertical size={25} />
                             </div>
@@ -82,7 +82,7 @@ export default function ChatBot({ }) {
                                             />
                                         );
                                     })}
-                                    {!messages?.length && <div className="h-full w-full fcc flex-col">
+                                    {!messages?.length && <div className="h-full w-full fcc flex-col text-center">
                                         <FaQuestion size={50} className="mb-3" />
                                         <h3 className="sec-head">Hi, How <span className="col-pri">can I help you </span>with?</h3>
                                         <p className="sec-para">Try, What is projectile motion?</p>

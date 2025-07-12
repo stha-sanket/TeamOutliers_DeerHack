@@ -1,4 +1,4 @@
-export const apiSlug = "http://192.168.103.30:2000"
+export const apiSlug = "http://localhost:2000"
 
 function generateKey() {
     return new Date().getTime().toString(22)

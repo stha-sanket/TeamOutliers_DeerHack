@@ -67,9 +67,12 @@ export default function DotProductCalculator() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 font-sans text-gray-800">
-      <h1 className="pri-head text-center mb-6">
-        Dot Product <span className="col-pri">Calculator & Visualizer</span>.
-      </h1>
+      <div className="mb-7 mt-5 text-center">
+        <h1 className="pri-head text-center">
+          Dot Product <span className="col-pri">Calculator & Visualizer</span>.
+        </h1>
+        <p>A tool that calculates the dot product of two vectors and visualizes their directions. Instantly see how angle and magnitude affect the result.</p>
+      </div>
 
       <div className="border bg-alt mb-14 mx-auto" style={{ maxWidth: SVG_SIZE }}>
         <svg
@@ -274,14 +277,60 @@ export default function DotProductCalculator() {
 
       <div className="para fcc gap-5 ">
         <div className="fcc">
-          <span className="inline-block w-3 h-3 bg-red-500 mr-1 align-middle"></span> Vector A
+          <span className="inline-block w-3 h-3 bg-red-500 mr-1 align-middle">
+          </span> Vector A
         </div>
         <div className="fcc">
-          <span className="inline-block w-3 h-3 bg-blue-500 mr-1 align-middle"></span> Vector B
+          <span className="inline-block w-3 h-3 bg-blue-500 mr-1 align-middle">
+          </span> Vector B
         </div>
         <div className="fcc">
-          <span className="inline-block w-3 h-3 bg-green-500 mr-1 align-middle"></span> Projection of B on A
+          <span className="inline-block w-3 h-3 bg-green-500 mr-1 align-middle">
+          </span> Projection of B on A
         </div>
+      </div>
+
+      <div class="mt-16 bg-card p-8 rounded-lg border shadow-sm prose prose-lg max-w-none" style={{ opacity: 1, transform: "none" }}>
+        <h2 class="text-3xl font-bold mb-6">Understanding Vectors and Dot Products</h2>
+        <p>Vectors are mathematical objects that have both magnitude (length) and direction. They are used extensively in physics and engineering to represent quantities like force, velocity, and displacement.</p>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Key Concepts &amp; Formulas</h3>
+        <h4>Vector Representation:</h4>
+        <p>A 2D vector can be represented as <code>A = (Ax, Ay)</code>, where <code>Ax</code> and <code>Ay</code> are its components along the x and y axes.</p>
+        <h4>Dot Product:</h4>
+        <p>The dot product (also known as the scalar product) of two vectors <code>A</code> and <code>B</code> is a scalar quantity given by:</p>
+        <p>
+          <code>A · B = Ax * Bx + Ay * By</code>
+        </p>
+        <p>Alternatively, it can be defined as:</p>
+        <p>
+          <code>A · B = |A| |B| cos(θ)</code>
+        </p>
+        <p>Where:</p>
+        <ul>
+          <li>
+            <code>|A|</code> and <code>|B|</code> are the magnitudes (lengths) of vectors A and B.</li>
+          <li>
+            <code>θ</code> is the angle between vectors A and B.</li>
+        </ul>
+        <p>The dot product tells us about the angle between two vectors. If the dot product is:</p>
+        <ul>
+          <li>Positive: The angle between the vectors is acute (less than 90°).</li>
+          <li>Zero: The vectors are perpendicular (orthogonal).</li>
+          <li>Negative: The angle between the vectors is obtuse (greater than 90°).</li>
+        </ul>
+        <h4>Angle Between Vectors:</h4>
+        <p>The angle <code>θ</code> between two non-zero vectors <code>A</code> and <code>B</code> can be found using the dot product formula:</p>
+        <p>
+          <code>cos(θ) = (A · B) / (|A| |B|)</code>
+        </p>
+        <p>So, <code>θ = arccos((A · B) / (|A| |B|))</code>
+        </p>
+        <h4>Vector Projection:</h4>
+        <p>The projection of vector <code>B</code> onto vector <code>A</code> (denoted as <code>proj_A B</code>) is the component of <code>B</code> that lies in the direction of <code>A</code>. It is a vector given by:</p>
+        <p>
+          <code>proj_A B = ((A · B) / |A|²) * A</code>
+        </p>
+        <p>This represents how much of vector B acts in the direction of vector A.</p>
       </div>
     </div>
   );

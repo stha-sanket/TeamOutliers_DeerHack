@@ -93,10 +93,13 @@ export default function RiverSimulation() {
     return (
         <Container.W1000>
             <div className="p-6">
-                <h1 className="pri-head text-center mb-6">
-                    River Crossing <span className="col-pri">Simulation</span>.
-                </h1>
-                
+                <div className="mt-5 mb-7 text-center">
+                    <h1 className="pri-head text-center">
+                        River Crossing <span className="col-pri">Simulation</span>.
+                    </h1>
+                    <p>An interactive tool to visualize motion across a flowing river. Adjust boat speed and river current to observe real-time path and crossing angle.</p>
+                </div>
+
                 <div className="flex flex-col gap-6">
                     <div className="flex-1 border bg-sky-200 rounded-md">
                         <canvas ref={canvasRef} className="w-full h-auto block" />
@@ -173,6 +176,37 @@ export default function RiverSimulation() {
                             </p>
                         </div>
                     </div>
+                </div>
+                <div class="mt-16 bg-card p-8 rounded-lg border shadow-sm prose prose-lg max-w-none" style={{ opacity: 1, transform: "none" }}>
+                    <h2 class="text-3xl font-bold mb-6">Understanding River Crossing</h2>
+                    <p>The River Crossing simulation demonstrates the principles of relative velocity. When a swimmer attempts to cross a river with a current, their effective velocity is the vector sum of their swimming velocity and the river's current velocity.</p>
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Key Concepts &amp; Formulas</h3>
+                    <h4>Time to Cross (t):</h4>
+                    <p>The time it takes to cross the river depends only on the river's width and the component of the swimmer's velocity perpendicular to the current:</p>
+                    <p>
+                        <code>t = River Width / Swimmer Speed (perpendicular to current)</code>
+                    </p>
+                    <h4>Drift Distance (d):</h4>
+                    <p>The distance the swimmer is carried downstream by the current:</p>
+                    <p>
+                        <code>d = Water Speed * Time to Cross</code>
+                    </p>
+                    <h4>Resultant Velocity (v_r):</h4>
+                    <p>The actual velocity of the swimmer relative to the ground, which is the vector sum of the swimmer's speed and the water's speed:</p>
+                    <p>
+                        <code>v_r = sqrt(Swimmer Speed² + Water Speed²)</code>
+                    </p>
+                    <h4>Total Distance Traveled:</h4>
+                    <p>The actual distance covered by the swimmer along their resultant path:</p>
+                    <p>
+                        <code>Total Distance = sqrt(River Width² + Drift Distance²)</code>
+                    </p>
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Important Considerations</h3>
+                    <ul>
+                        <li>This simulation assumes the swimmer always aims directly across the river.</li>
+                        <li>The river current is uniform across the river's width.</li>
+                        <li>The swimmer's speed is constant relative to the water.</li>
+                    </ul>
                 </div>
             </div>
         </Container.W1000>

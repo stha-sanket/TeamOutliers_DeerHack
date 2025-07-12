@@ -65,10 +65,28 @@ textarea {
 
 /* Defaults */
 :root {
-  --background: #f5f5f5;
-  --foreground: #454545;
+  --background: 210 40% 98%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 210 40% 98%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 210 40% 98%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
 
-  --primary: #ff0814;
+  --primary: #086bff;
   --secondary: #1f2937;
 
   --background-sec: #fdfdfd;
@@ -107,7 +125,7 @@ textarea {
   padding: 0;
   margin: 0;
 
-  font-family: "Roboto", serif;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   border-color: var(--border);
 }
